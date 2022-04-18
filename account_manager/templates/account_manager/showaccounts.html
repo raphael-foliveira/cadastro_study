@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+
+{%block title%}
+<title>Accounts</title>
+{%endblock%}
+
+{%block content%}
+<h1>Accounts</h1>
+<h3><a href={%url 'home_view' %}>Home</a></h3>
+<h3><a href={%url 'account_manager:create_account' %}>Create account</a></h3>
+<ul>
+
+    {% for account in all_accounts %}
+    <li>Name: {{account.account_name}}<br>
+        Description: {{account.account_data}}<br>
+        <a href={% url "account_manager:delete_account" account_pk=account.pk %}>Delete</a>
+    </li>
+    {%endfor%}
+
+</ul>
+
+{%endblock%}
