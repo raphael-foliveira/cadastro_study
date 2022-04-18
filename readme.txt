@@ -1,0 +1,1 @@
+Simple CRUD study using django and the default sqlite db.
